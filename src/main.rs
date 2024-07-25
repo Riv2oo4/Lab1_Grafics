@@ -58,6 +58,39 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly3);
 
+    let poly4= vec![
+        (413, 177),
+        (448, 159),
+        (502, 88),
+        (553, 53),
+        (535, 36),
+        (676, 37),
+        (660, 52),
+        (750, 145),
+        (761, 179),
+        (672, 192),
+        (659, 214),
+        (615, 214),(632, 230),
+        (580, 230),
+        (597, 215),
+        (552, 214),
+        (517, 144),
+        (466, 180)
+    ];
+    framebuffer.set_current_color(0x00FF00);
+    framebuffer.fill_polygon(&poly4);
+    framebuffer.set_current_color(0xFFFFFF);
+    framebuffer.polygon(&poly4);
+
+    let poly5=vec![
+        (682, 175),(708, 120),(735, 148),(739, 170)
+
+    ];
+    framebuffer.set_current_color(0x000000);
+    framebuffer.fill_polygon(&poly5);
+    framebuffer.set_current_color(0xFFFFFF);
+    framebuffer.polygon(&poly5);
+
 
 
     let _ = framebuffer.render_buffer("output.bmp");
