@@ -88,7 +88,7 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly5);
 
-    // Flip the framebuffer
+    
     framebuffer.flip();
 
     let _ = framebuffer.render_buffer("output.bmp");
