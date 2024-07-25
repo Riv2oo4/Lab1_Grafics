@@ -1,4 +1,3 @@
-
 pub struct Framebuffer {
     pub width: usize,
     pub height: usize,
@@ -14,7 +13,7 @@ impl Framebuffer {
             height,
             buffer: vec![0; width * height],
             background_color: 0x000000,
-            current_color: 0xFFFFFF
+            current_color: 0xFFFFFF,
         }
     }
 
@@ -36,5 +35,16 @@ impl Framebuffer {
 
     pub fn set_current_color(&mut self, color: u32) {
         self.current_color = color;
+    }
+
+    pub fn flip(&mut self) {
+        let mid_height = self.height / 2;
+        for y in 0..mid_height {
+            for x in 0..self.width {
+                let top_index = y * self.width + x;
+                let bottom_index = (self.height - y - 1) * self.width + x;
+                self.buffer.swap(top_index, bottom_index);
+            }
+        }
     }
 }
