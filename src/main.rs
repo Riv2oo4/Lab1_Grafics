@@ -35,6 +35,18 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly1);
 
+    let poly2 = vec![
+        (321, 335),
+        (288, 286),
+        (339, 251),
+        (374, 302)
+
+    ];
+    framebuffer.set_current_color(0xFF0000);
+    framebuffer.fill_polygon(&poly2);
+    framebuffer.set_current_color(0xFFFFFF);
+    framebuffer.polygon(&poly2);
+
 
 
     let _ = framebuffer.render_buffer("output.bmp");
