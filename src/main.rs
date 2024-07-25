@@ -16,7 +16,6 @@ fn main() {
 
     framebuffer.set_current_color(0xFFFFFF);
 
-
     let poly1 = vec![
         (165, 380), 
         (185, 360), 
@@ -40,25 +39,23 @@ fn main() {
         (288, 286),
         (339, 251),
         (374, 302)
-
     ];
     framebuffer.set_current_color(0xFF0000);
     framebuffer.fill_polygon(&poly2);
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly2);
 
-    let poly3=vec![
+    let poly3 = vec![
         (377, 249),
         (411, 197),
         (436, 249)
-
     ];
     framebuffer.set_current_color(0x0000FF);
     framebuffer.fill_polygon(&poly3);
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly3);
 
-    let poly4= vec![
+    let poly4 = vec![
         (413, 177),
         (448, 159),
         (502, 88),
@@ -70,7 +67,8 @@ fn main() {
         (761, 179),
         (672, 192),
         (659, 214),
-        (615, 214),(632, 230),
+        (615, 214),
+        (632, 230),
         (580, 230),
         (597, 215),
         (552, 214),
@@ -82,18 +80,18 @@ fn main() {
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly4);
 
-    let poly5=vec![
-        (682, 175),(708, 120),(735, 148),(739, 170)
-
+    let poly5 = vec![
+        (682, 175), (708, 120), (735, 148), (739, 170)
     ];
     framebuffer.set_current_color(0x000000);
     framebuffer.fill_polygon(&poly5);
     framebuffer.set_current_color(0xFFFFFF);
     framebuffer.polygon(&poly5);
 
-
+    // Flip the framebuffer
+    framebuffer.flip();
 
     let _ = framebuffer.render_buffer("output.bmp");
 
     println!("Framebuffer rendered to output.bmp");
-} 
+}
